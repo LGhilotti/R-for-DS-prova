@@ -43,14 +43,16 @@ usethis::use_readme_md( open = FALSE )
 
 
 ## Use tests: if you want to use tests
-# usethis::use_testthat()
-# installed.packages("devtools")
+usethis::use_testthat()
 
 
 # Develop -----------------------------------------------------------------
 
 
 # * Add a dependency ------------------------------------------------------
+
+# Development dependency (usato solo per sviluppare, per scrivere, ma non per le funzionalità)
+usethis::use_package("devtools", type="Suggests")
 
 usethis::use_package( "dplyr" )
 # remeber to add it to ROXYGEN or NAMESPACE:
@@ -62,6 +64,7 @@ usethis::use_package( "dplyr" )
 
 ## If you want to use roxygen, enable ROXYGEN in the project.
 # Menu: tools > Project options > build tools > generate the documentation with roxygen
+# NB: flag also "Install and Restart"
 usethis::use_namespace(roxygen = TRUE)
 devtools::document() # to fill NAMESPACE and documentation with ROXYGEN comments
 # or roxygen2::roxygenise() # converts roxygen comments to .Rd files.
@@ -79,7 +82,7 @@ usethis::use_data_raw( name = "my_dataset", open = FALSE )
 
 # * Add Tests -------------------------------------------------------------
 ## Add one line by test you want to create
-usethis::use_test( "hello" )
+usethis::use_test( "somma" )
 
 # * Add Vignettes --------------------------------------------------------
 usethis::use_vignette("ThisTidyPackage")
